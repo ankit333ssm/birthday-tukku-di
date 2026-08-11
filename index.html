@@ -88,11 +88,60 @@ button:hover{
         opacity:0;
     }
 }
+   .balloons{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.balloons span{
+    position:absolute;
+    bottom:-120px;
+    font-size:55px;
+    animation:balloonUp 8s linear infinite;
+}
+
+.balloons span:nth-child(1){left:5%;animation-delay:0s;}
+.balloons span:nth-child(2){left:22%;animation-delay:1.5s;}
+.balloons span:nth-child(3){left:40%;animation-delay:3s;}
+.balloons span:nth-child(4){left:58%;animation-delay:0.8s;}
+.balloons span:nth-child(5){left:76%;animation-delay:2.2s;}
+.balloons span:nth-child(6){left:90%;animation-delay:4s;}
+
+@keyframes balloonUp{
+    0%{
+        bottom:-120px;
+        transform:translateX(0) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    50%{
+        transform:translateX(35px) rotate(8deg);
+    }
+
+    100%{
+        bottom:110vh;
+        transform:translateX(-35px) rotate(-8deg);
+        opacity:0;
+    }
+} 
 </style>
 </head>
 
 <body>
-
+<div class="balloons">
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+    <span>🎈</span>
+</div>
 <div class="container" id="opening">
 
     <h1>Hey Tukku Di... ❤️</h1>
