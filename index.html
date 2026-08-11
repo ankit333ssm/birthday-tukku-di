@@ -2,17 +2,12 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday Tukku Di ❤️</title>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
 
 *{
     box-sizing:border-box;
@@ -28,8 +23,8 @@ body{
     min-height:100vh;
     overflow-x:hidden;
     overflow-y:auto;
-
     font-family:Georgia,serif;
+    color:#5b2638;
 
     background:
     linear-gradient(
@@ -38,28 +33,90 @@ body{
         #fff0f6,
         #ffe4c9
     );
-
-    color:#5b2638;
 }
 
 
-/* =========================
-   MAIN CONTAINER
-========================= */
+/* BALLOONS */
+
+.balloons{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1;
+}
+
+.balloons span{
+    position:absolute;
+    bottom:-100px;
+    font-size:50px;
+    animation:balloonUp 8s linear infinite;
+}
+
+.balloons span:nth-child(1){
+    left:5%;
+}
+
+.balloons span:nth-child(2){
+    left:20%;
+    animation-delay:1s;
+}
+
+.balloons span:nth-child(3){
+    left:40%;
+    animation-delay:2s;
+}
+
+.balloons span:nth-child(4){
+    left:60%;
+    animation-delay:3s;
+}
+
+.balloons span:nth-child(5){
+    left:78%;
+    animation-delay:1.5s;
+}
+
+.balloons span:nth-child(6){
+    left:90%;
+    animation-delay:4s;
+}
+
+@keyframes balloonUp{
+
+    0%{
+        bottom:-100px;
+        opacity:0;
+        transform:translateX(0);
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    50%{
+        transform:translateX(30px) rotate(8deg);
+    }
+
+    100%{
+        bottom:110vh;
+        opacity:0;
+        transform:translateX(-30px) rotate(-8deg);
+    }
+}
+
+
+/* MAIN BOX */
 
 .container{
-
-    width:90%;
+    width:92%;
     max-width:700px;
-
-    margin:40px auto;
+    margin:30px auto;
+    padding:35px 22px;
 
     text-align:center;
 
-    padding:40px 25px;
-
-    background:
-    rgba(255,255,255,.65);
+    background:rgba(255,255,255,.72);
 
     border-radius:30px;
 
@@ -67,70 +124,41 @@ body{
     0 15px 50px
     rgba(120,40,70,.20);
 
-    backdrop-filter:blur(10px);
-
     position:relative;
-
-    z-index:10;
+    z-index:5;
 }
 
 
-/* =========================
-   HEADINGS
-========================= */
+/* HEADINGS */
 
 h1{
-
     font-size:42px;
-
-    margin-bottom:15px;
-
     line-height:1.2;
+    margin-bottom:15px;
 }
 
 h2{
-
     font-size:28px;
-
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .subtitle{
-
     font-size:20px;
-
-    margin-bottom:30px;
-
     line-height:1.6;
+    margin-bottom:25px;
 }
 
 
-/* =========================
-   GIFT
-========================= */
+/* GIFT */
 
 .gift{
-
     font-size:100px;
-
     cursor:pointer;
-
     display:inline-block;
-
-    animation:
-    giftBounce 1.5s infinite;
-
-    transition:.3s;
+    animation:bounce 1.5s infinite;
 }
 
-.gift:hover{
-
-    transform:
-    scale(1.15)
-    rotate(5deg);
-}
-
-@keyframes giftBounce{
+@keyframes bounce{
 
     0%,100%{
         transform:translateY(0);
@@ -142,26 +170,16 @@ h2{
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* BUTTON */
 
 button{
-
     border:none;
-
-    padding:
-    14px 28px;
-
+    padding:14px 26px;
     border-radius:30px;
-
     font-size:18px;
-
     cursor:pointer;
-
-    background:#e85d8a;
-
     color:white;
+    background:#e85d8a;
 
     box-shadow:
     0 6px 15px
@@ -171,182 +189,49 @@ button{
 }
 
 button:hover{
-
-    transform:scale(1.06);
-
-    background:#d94d7c;
+    transform:scale(1.05);
 }
 
 button:active{
-
     transform:scale(.96);
 }
 
 
-/* =========================
-   HIDDEN
-========================= */
+/* HIDDEN */
 
 .hidden{
     display:none;
 }
 
 
-/* =========================
-   BALLOONS
-========================= */
-
-.balloons{
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-    z-index:1;
-}
-
-.balloons span{
-
-    position:absolute;
-
-    bottom:-120px;
-
-    font-size:55px;
-
-    animation:
-    balloonUp 8s linear infinite;
-}
-
-.balloons span:nth-child(1){
-
-    left:5%;
-
-    animation-delay:0s;
-}
-
-.balloons span:nth-child(2){
-
-    left:22%;
-
-    animation-delay:1.5s;
-}
-
-.balloons span:nth-child(3){
-
-    left:40%;
-
-    animation-delay:3s;
-}
-
-.balloons span:nth-child(4){
-
-    left:58%;
-
-    animation-delay:.8s;
-}
-
-.balloons span:nth-child(5){
-
-    left:76%;
-
-    animation-delay:2.2s;
-}
-
-.balloons span:nth-child(6){
-
-    left:90%;
-
-    animation-delay:4s;
-}
-
-@keyframes balloonUp{
-
-    0%{
-
-        bottom:-120px;
-
-        transform:
-        translateX(0)
-        rotate(0deg);
-
-        opacity:0;
-    }
-
-    15%{
-        opacity:1;
-    }
-
-    50%{
-
-        transform:
-        translateX(35px)
-        rotate(8deg);
-    }
-
-    100%{
-
-        bottom:110vh;
-
-        transform:
-        translateX(-35px)
-        rotate(-8deg);
-
-        opacity:0;
-    }
-}
-
-
-/* =========================
-   BIRTHDAY SCREEN
-========================= */
+/* BIRTHDAY */
 
 #birthday{
-
-    animation:
-    birthdayAppear 1.2s ease;
+    animation:appear 1s ease;
 }
 
-@keyframes birthdayAppear{
+@keyframes appear{
 
     from{
-
         opacity:0;
-
-        transform:
-        scale(.75)
-        translateY(30px);
+        transform:scale(.8);
     }
 
     to{
-
         opacity:1;
-
-        transform:
-        scale(1)
-        translateY(0);
+        transform:scale(1);
     }
 }
 
 
-/* =========================
-   CAKE
-========================= */
+/* CAKE */
 
 .cake{
-
-    font-size:90px;
-
-    margin-bottom:10px;
-
-    animation:
-    cakeBounce 2s infinite;
+    font-size:85px;
+    animation:cake 2s infinite;
 }
 
-@keyframes cakeBounce{
+@keyframes cake{
 
     0%,100%{
         transform:translateY(0);
@@ -358,42 +243,139 @@ button:active{
 }
 
 
-/* =========================
-   MESSAGE
-========================= */
+/* MESSAGE */
 
 #message{
-
     font-size:19px;
-
     line-height:1.8;
-
-    margin-top:15px;
 }
 
 
-/* =========================
-   HEARTS
-========================= */
+/* LETTER */
+
+.letter{
+    margin-top:25px;
+    padding:25px;
+
+    background:#fffaf3;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 8px 25px
+    rgba(100,40,60,.15);
+
+    text-align:left;
+
+    font-size:18px;
+    line-height:1.8;
+}
+
+.letter-title{
+    text-align:center;
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.signature{
+    text-align:right;
+    margin-top:20px;
+    font-size:20px;
+    font-style:italic;
+}
+
+
+/* MEMORIES */
+
+.memories{
+    margin-top:40px;
+    padding-top:30px;
+
+    border-top:
+    1px solid
+    rgba(120,40,70,.15);
+}
+
+
+/* PHOTO GRID */
+
+.photo-grid{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+
+/* PHOTO CARD */
+
+.photo-card{
+    width:180px;
+    padding:10px 10px 20px;
+
+    background:white;
+
+    box-shadow:
+    0 8px 20px
+    rgba(80,30,50,.20);
+
+    transition:.3s;
+
+    transform:rotate(-3deg);
+}
+
+.photo-card:nth-child(2){
+    transform:rotate(3deg);
+}
+
+.photo-card:nth-child(3){
+    transform:rotate(-2deg);
+}
+
+.photo-card:hover{
+    transform:rotate(0deg) scale(1.05);
+}
+
+
+/* ACTUAL PHOTO */
+
+.photo-card img{
+    display:block;
+
+    width:100%;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:3px;
+}
+
+
+/* PHOTO TEXT */
+
+.photo-card p{
+    margin-top:12px;
+    font-size:15px;
+    line-height:1.4;
+}
+
+
+/* HEART */
 
 .heart{
-
     position:fixed;
-
     bottom:-30px;
+    pointer-events:none;
+    z-index:20;
 
     animation:
-    floatHeart 5s linear forwards;
-
-    pointer-events:none;
-
-    z-index:20;
+    heartUp 5s linear forwards;
 }
 
-@keyframes floatHeart{
+@keyframes heartUp{
 
     to{
-
         transform:
         translateY(-110vh)
         rotate(360deg);
@@ -403,38 +385,23 @@ button:active{
 }
 
 
-/* =========================
-   SPARKLES
-========================= */
+/* SPARKLE */
 
 .sparkle{
-
     position:fixed;
-
+    bottom:-30px;
     pointer-events:none;
+    z-index:15;
 
     animation:
-    sparkleMove 3s linear forwards;
-
-    z-index:5;
+    sparkleUp 3s linear forwards;
 }
 
-@keyframes sparkleMove{
+@keyframes sparkleUp{
 
-    0%{
-
-        transform:
-        translateY(0)
-        scale(1);
-
-        opacity:1;
-    }
-
-    100%{
-
+    to{
         transform:
         translateY(-100vh)
-        scale(.2)
         rotate(360deg);
 
         opacity:0;
@@ -442,336 +409,86 @@ button:active{
 }
 
 
-/* =========================
-   LETTER
-========================= */
-
-.letter{
-
-    margin-top:25px;
-
-    padding:25px;
-
-    background:#fffaf3;
-
-    border-radius:20px;
-
-    box-shadow:
-    inset 0 0 20px
-    rgba(130,70,50,.08),
-
-    0 8px 25px
-    rgba(100,40,60,.15);
-
-    text-align:left;
-
-    line-height:1.8;
-
-    font-size:18px;
-
-    animation:
-    letterOpen .8s ease;
-}
-
-@keyframes letterOpen{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        scale(.8)
-        rotateX(-20deg);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        scale(1)
-        rotateX(0);
-    }
-}
-
-.letter-title{
-
-    text-align:center;
-
-    font-size:25px;
-
-    margin-bottom:18px;
-}
-
-.signature{
-
-    text-align:right;
-
-    margin-top:20px;
-
-    font-size:20px;
-
-    font-style:italic;
-}
-
-
-/* =========================
-   MEMORIES
-========================= */
-
-.memories{
-
-    margin-top:40px;
-
-    padding-top:20px;
-
-    border-top:
-    1px solid
-    rgba(120,40,70,.15);
-}
-
-.memories h2{
-
-    margin-bottom:25px;
-}
-
-
-/* =========================
-   PHOTO GRID
-========================= */
-
-.photo-grid{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-start;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-}
-
-
-/* =========================
-   PHOTO CARD
-========================= */
-
-.photo-card{
-
-    background:#fff;
-
-    padding:
-    10px 10px 25px;
-
-    width:180px;
-
-    box-shadow:
-    0 8px 20px
-    rgba(80,30,50,.18);
-
-    transition:
-    .4s;
-
-    transform:
-    rotate(-3deg);
-}
-
-.photo-card:nth-child(2){
-
-    transform:
-    rotate(3deg)
-    translateY(10px);
-}
-
-.photo-card:nth-child(3){
-
-    transform:
-    rotate(-2deg);
-}
-
-
-.photo-card:hover{
-
-    transform:
-    rotate(0deg)
-    scale(1.08);
-
-    z-index:5;
-}
-
-
-/* =========================
-   PHOTO
-========================= */
-
-.photo-card img{
-
-    width:100%;
-
-    height:180px;
-
-    object-fit:cover;
-
-    display:block;
-
-    border-radius:2px;
-}
-
-
-/* =========================
-   PHOTO CAPTION
-========================= */
-
-.photo-card p{
-
-    margin-top:12px;
-
-    font-size:15px;
-
-    line-height:1.4;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
-    body{
-
-        overflow-x:hidden;
-
-        overflow-y:auto;
-    }
-
-
     .container{
-
         width:92%;
-
-        margin:25px auto;
-
-        padding:
-        30px 18px;
+        margin:20px auto;
+        padding:30px 17px;
     }
-
 
     h1{
-
         font-size:32px;
     }
 
-
     h2{
-
         font-size:25px;
     }
 
-
     .subtitle{
-
         font-size:17px;
     }
 
-
     .gift{
-
         font-size:80px;
     }
 
-
-    button{
-
-        font-size:16px;
-
-        padding:
-        12px 22px;
+    .cake{
+        font-size:70px;
     }
-
-
-    .balloons span{
-
-        font-size:42px;
-    }
-
 
     #message{
-
         font-size:17px;
     }
 
-
     .letter{
-
         font-size:16px;
-
         padding:20px;
     }
 
-
     .photo-grid{
-
-        gap:12px;
+        gap:15px;
     }
-
 
     .photo-card{
-
         width:140px;
-
-        padding:
-        8px 8px 20px;
     }
 
-
     .photo-card img{
-
+        width:100%;
         height:140px;
     }
 
-
     .photo-card p{
-
         font-size:13px;
     }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     BALLOONS
-========================= -->
+<!-- BALLOONS -->
 
 <div class="balloons">
 
     <span>🎈</span>
-
     <span>🎈</span>
-
     <span>🎈</span>
-
     <span>🎈</span>
-
     <span>🎈</span>
-
     <span>🎈</span>
 
 </div>
 
 
-<!-- =========================
-     OPENING SCREEN
-========================= -->
+<!-- OPENING PAGE -->
 
 <div
     class="container"
@@ -782,43 +499,28 @@ button:active{
         Hey Tukku Di... ❤️
     </h1>
 
-
     <p class="subtitle">
-
         Aapke liye kuch special hai... 🎁
-
     </p>
-
 
     <div
         class="gift"
         onclick="openGift()"
     >
-
         🎁
-
     </div>
 
-
     <br>
     <br>
 
-
-    <button
-        onclick="openGift()"
-    >
-
+    <button onclick="openGift()">
         Open The Gift 🎁
-
     </button>
 
 </div>
 
 
-
-<!-- =========================
-     BIRTHDAY SCREEN
-========================= -->
+<!-- BIRTHDAY PAGE -->
 
 <div
     class="container hidden"
@@ -826,25 +528,18 @@ button:active{
 >
 
     <div class="cake">
-
         🎂
-
     </div>
 
 
     <h1>
-
         Happy Birthday<br>
-
         Priyadarshini ❤️
-
     </h1>
 
 
     <p class="subtitle">
-
         Happy Birthday Tukku Di 🌸
-
     </p>
 
 
@@ -870,18 +565,12 @@ button:active{
 
     <!-- LETTER BUTTON -->
 
-    <button
-        onclick="openLetter()"
-    >
-
+    <button onclick="openLetter()">
         💌 Tukku Di ke liye ek letter
-
     </button>
 
 
-    <!-- =========================
-         LETTER
-    ========================= -->
+    <!-- LETTER -->
 
     <div
         id="letterBox"
@@ -891,9 +580,7 @@ button:active{
         <div class="letter">
 
             <div class="letter-title">
-
                 💌 Dear Tukku Di
-
             </div>
 
 
@@ -929,9 +616,7 @@ button:active{
 
 
             <div class="signature">
-
                 — Ankit ❤️
-
             </div>
 
         </div>
@@ -939,65 +624,61 @@ button:active{
     </div>
 
 
-    <!-- =========================
-         MEMORIES
-    ========================= -->
+    <!-- PHOTO SECTION -->
 
     <div class="memories">
 
         <h2>
-
             📸 Our Memories
-
         </h2>
 
 
         <div class="photo-grid">
 
 
+            <!-- PHOTO 1 -->
+
             <div class="photo-card">
 
                 <img
-                    src="photo1.jpg.jpg"
+                    src="./photo1.jpg.jpg"
                     alt="Memory 1"
                 >
 
                 <p>
-
                     A beautiful memory ❤️
-
                 </p>
 
             </div>
 
 
+            <!-- PHOTO 2 -->
+
             <div class="photo-card">
 
                 <img
-                    src="photo2.jpg.jpg"
+                    src="./photo2.jpg.jpg"
                     alt="Memory 2"
                 >
 
                 <p>
-
                     One more special moment 🌸
-
                 </p>
 
             </div>
 
 
+            <!-- PHOTO 3 -->
+
             <div class="photo-card">
 
                 <img
-                    src="photo3.jpg.jpg"
+                    src="./photo3.jpg.jpg"
                     alt="Memory 3"
                 >
 
                 <p>
-
                     A memory to smile about 😊
-
                 </p>
 
             </div>
@@ -1011,13 +692,10 @@ button:active{
 </div>
 
 
-
 <script>
 
 
-/* =========================
-   OPEN GIFT
-========================= */
+/* OPEN GIFT */
 
 function openGift(){
 
@@ -1039,25 +717,20 @@ function openGift(){
 }
 
 
-/* =========================
-   OPEN LETTER
-========================= */
+/* OPEN LETTER */
 
 function openLetter(){
 
-    const box =
     document
-    .getElementById("letterBox");
-
-
-    box
+    .getElementById("letterBox")
     .classList
     .remove("hidden");
 
 
     setTimeout(function(){
 
-        box
+        document
+        .getElementById("letterBox")
         .scrollIntoView({
             behavior:"smooth",
             block:"center"
@@ -1068,21 +741,17 @@ function openLetter(){
 }
 
 
-/* =========================
-   HEARTS
-========================= */
+/* HEARTS */
 
 function createHearts(){
 
     setInterval(function(){
 
         const heart =
-        document
-        .createElement("div");
+        document.createElement("div");
 
 
         heart.className="heart";
-
 
         heart.innerHTML="❤️";
 
@@ -1092,8 +761,7 @@ function createHearts(){
 
 
         heart.style.fontSize =
-        (20+
-        Math.random()*25)+"px";
+        (20 + Math.random()*25)+"px";
 
 
         document
@@ -1108,26 +776,22 @@ function createHearts(){
         },5000);
 
 
-    },300);
+    },350);
 
 }
 
 
-/* =========================
-   SPARKLES
-========================= */
+/* SPARKLES */
 
 function createSparkles(){
 
     setInterval(function(){
 
         const sparkle =
-        document
-        .createElement("div");
+        document.createElement("div");
 
 
         sparkle.className="sparkle";
-
 
         sparkle.innerHTML="✨";
 
@@ -1136,12 +800,8 @@ function createSparkles(){
         Math.random()*100+"vw";
 
 
-        sparkle.style.bottom="-30px";
-
-
         sparkle.style.fontSize =
-        (15+
-        Math.random()*20)+"px";
+        (15 + Math.random()*20)+"px";
 
 
         document
@@ -1156,12 +816,11 @@ function createSparkles(){
         },3000);
 
 
-    },450);
+    },500);
 
 }
 
 </script>
-
 
 </body>
 
